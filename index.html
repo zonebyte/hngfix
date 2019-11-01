@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link rel="icon" type="img/png" href="images/hng-favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/header-footer.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/contactformf.css">
+
+    <link rel="stylesheet" href="css/faq.css">
+
+
+</head>
+
+<body>
+    <div class="header_container">
+        <div class="container">
+ <style type="text/css">
+
+  @media (max-width: 420px) {
+   #hng-logo {
+    max-width: 100% !important;
+    width: 70% !important;
+   }
+  }
+  </style>
+
+  <style type="text/css">
+      @import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
+
+.header_container {
+  background-color: #D1F0F6;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.header_container h1 {
+  color: #084482;
+  font-weight: bolder;
+}
+
+.header_container p {
+  color: #474747;
+}
+
+
+
+.myaccordion {
+    box-shadow: 0 0 1px rgba(51, 8, 8, 0.1);
+    width: 100%;
+    margin: 80px 0;
+}
+
+.myaccordion .card,
+.myaccordion .card:last-child .card-header {
+    border: none;
+  
+    
+}
+
+.myaccordion .card-header {
+    border-bottom-color: #EDEFF0;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.myaccordion .fa-stack {
+    font-size: 20px;
+}
+
+.myaccordion .btn {
+    width: 100%;
+    font-weight: bold;
+    color: #00AEFF;
+    padding: 0;
+    font-size: 15px;
+    font-family: Open Sans;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.myaccordion .btn i {
+  margin-left: 30px;
+}
+
+.myaccordion .btn-link:hover,
+.myaccordion .btn-link:focus {
+    text-decoration: none;
+}
+
+.myaccordion li+li {
+    margin-top: 20px;
+ 
+}
+.freq-n h3{
+text-transform: capitalize;
+}
+.freq-n h3 a {
+  color: white;
+  background-color: #00AEFF;
+}
+
+.freq-n h3 a:hover {
+  color: white;
+  opacity: .7;
+}
+
+.header a {
+    background: #00AEFF;
+}
+  </style>
+    <header id="header">
+        <!--Logo-->
+        <section id="logo">
+            <a href="index.php"><img id="hng-logo"
+                    src="https://res.cloudinary.com/phiileo/image/upload/v1571147073/brand-logo_tx0mdt.png" ></a>
+        </section>
+        <!--ends here-->
+        <section class="nav_button" onclick="toggleMenu()">
+            <div class="nav_button_bar"></div>
+            <div class="nav_button_bar"></div>
+            <div class="nav_button_bar"></div>
+        </section>
+        <nav class="menu_bar" id="navMenu">
+            <a href="index.php" class="nav-link" id="home">Home</a>
+            <a href="hng6.php" class="nav-link">HNGi 6.0</a>
+            <a href="mentorpage.php" class="nav-link">Mentors</a>
+            <a href="contactform.php" class="nav-link">Contact</a>
+            <a href="login.php" class="nav-link">Login</a>
+            <a href="join-intern.php" class="nav-link primary-btn float_right">Join HNGi7.0</a>
+        </nav>
+    </header>
+</div>
+
+<script>
+    function toggleMenu(){
+        let menuBar = $("#navMenu");
+        menuBar.toggle();
+    }
+
+
+
+    function grabHeight() {
+        var D = document;
+        return Math.max(
+            D.body.scrollHeight, D.documentElement.scrollHeight,
+            D.body.offsetHeight, D.documentElement.offsetHeight,
+            D.body.clientHeight, D.documentElement.clientHeight
+        )
+    }
+
+    let prev = 0;
+    function mainfunc() {
+        //prev = pctScrolled;
+        var winheight = window.innerHeight || (document.documentElement || document.body).clientHeight;
+        var docheight = grabHeight();
+        var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        var trackLength = docheight - winheight;
+        var pctScrolled = scrollTop / trackLength * 100;
+
+        if (scrollTop > prev) {
+            document.getElementById("header").classList.add("navbg2");
+            document.getElementById("header").classList.remove("navbg");
+            document.getElementById("header").classList.remove("dynamic");
+
+        } else {
+
+            document.getElementById("header").classList.add("navbg");
+            document.getElementById("header").classList.remove("navbg2");
+            document.getElementById("header").classList.add("dynamic");
+
+        }
+        if (pctScrolled < 0.3) {
+            document.getElementById("header").classList.add("navbg2");
+            document.getElementById("header").classList.remove("navbg");
+            document.getElementById("header").classList.remove("dynamic");
+
+        }
+
+        return prev = scrollTop <= 0 ? 0 : scrollTop;
+
+
+    }
+    window.addEventListener("scroll", function () {
+        mainfunc();
+
+    });
+
+   
+</script>
+        <section class="hero pt-4">
+            <div class="container">
+                <div class="wrap my-5">
+                    <h1>Frequently Asked Questions
+                    </h1>
+                    <p>Here are some of the most frequently asked questions on HNG 7.0</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-md-12 text-black">
+        <div class="container">
+            <div id="accordion" class="myaccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed"
+                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                                aria-controls="collapseOne">
+                                What is HNGI all about?
+                                <span class="fa-stack fa-sm">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="text-muted">  Remote internship that enables you learn or improve skill by working on real-world projects
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                                <button class="btn btn-link collapsed"
+                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                When will the Internship begin?
+                                <span class="fa-stack fa-sm">
+                                        <i class="fas fa-angle-down"></i>
+                                </span>                            
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="text-muted">
+                            Follow @hnginternship on twitter for more information about the starting date
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                                <button class="btn btn-link collapsed"
+                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                What benefits can I get on this internship?
+                                <span class="fa-stack fa-sm">
+                                        <i class="fas fa-angle-down"></i>
+                                </span>                            
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="text-muted">
+                            Benefits upon completion include access to HNG network comprising of past finalists, improving your portfolio (via the product/project you worked on), access to job opportunities and occasional data stipends depending on performance during the internship
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                                <button class="btn btn-link collapsed"
+                                data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                aria-controls="collapseFour">
+                                How long does the internship lasts?
+                                <span class="fa-stack fa-sm">
+                                        <i class="fas fa-angle-down"></i>
+                                </span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="text-muted">
+                            About 3 months.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                 <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h2 class="mb-0">
+                                <button class="btn btn-link collapsed"
+                                data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                aria-controls="collapseFive">
+                                I have no coding/design/digital marketing knowledge.
+                                <span class="fa-stack fa-sm">
+                                        <i class="fas fa-angle-down"></i>
+                                </span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="text-muted">
+                            There is a pre-internship stage that will cater for newbies.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                        <h2 class="mb-0">
+                                <button class="btn btn-link collapsed"
+                                data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                                aria-controls="collapseSix">
+                                Do we get certificates upon completion?
+                                <span class="fa-stack fa-sm">
+                                        <i class="fas fa-angle-down"></i>
+                                </span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="text-muted">
+                            Yes
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+   
+
+    <section class="freq-n">
+        <div class="container">
+            <div class="wrap" style="width: 100%;">
+                <div class="header mb-5">
+                    <h2>not a frequently asked question?<br />
+                        contact us <a href="contactform.php" class="btn btn-primary">Here</a>
+                    </h2>
+                </div>
+                <!-- <form class="inputs-wrap">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Subject">
+                    <textarea name="text" id="" cols="" rows="10"></textarea>
+                    <input type="submit" id="submit" value="SEND MESSAGE" class="btn btn-block">
+
+                </form> -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer id="footer">
+    <div class="container">
+
+    <img id="footer-logo" src="https://res.cloudinary.com/phiileo/image/upload/v1571147073/brand-logo_tx0mdt.png">
+
+    <nav class="footer-nav">
+        <div class="row">
+            <div class="col-md-3 pb-3">
+                <h2 class="skyblue-text">Quick Links</h2>
+                <div id="link-list">
+                    <a href="join-intern.php" class="skyblue-text">Join HNG</a>
+                    <a href="index.php" class="skyblue-text">About HNG</a>
+                    <a href="donate.php" class="skyblue-text">Become a Sponsor</a>
+                    <a href="MentorSetUpPage2.php" class="skyblue-text">Sign up as Mentor</a>
+                    <a href="faq.php" class="skyblue-text">FAQ</a>
+                    <a href="intern-experience.php" class="skyblue-text">Past Intern Experience</a>
+                    <a href="request_certificate.php">Request Certificate</a>
+
+                </div>
+            </div>
+            <div class="col-md-3 pb-3 footer-section">
+                <h2 class="skyblue-text">Contact Us</h2>
+                <div>
+                    <a href="tel:+2348123456789">
+                        <strong>
+                            Phone: <br />
+                        </strong>
+                        +234 812 345 6789
+                    </a>
+                    <br />
+                    <a href="mailto:interns@hng.tech">
+                        <strong>
+                            Email: <br />
+                        </strong>
+                        interns@hng.tech
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 pb-3 footer-section">
+                <h2 class="skyblue-text">Office Address</h2>
+                <p id="address">
+                    <a href="https://www.google.com/maps/place/Hotels.ng/@6.5091808,3.3795046,17z/data=!4m13!1m7!3m6!1s0x103b8cf61c9c63c5:0xb2ef3a96e7eb315e!2s3+Birrel+Ave,+Yaba+100001,+Lagos!3b1!8m2!3d6.5091808!4d3.3795046!3m4!1s0x103b8c58aa4e0931:0x9ddabc4518c15d14!8m2!3d6.5091808!4d3.3795046">3 Birrel Avenue <br /> Sabo, Yaba, <br /> Lagos state</a> <br>
+                    
+ 
+                </p>
+            </div>
+            <div class="col-md-3 pb-3">
+                <h2 class="skyblue-text">Follow Us</h2>
+                <div id="socials">
+                    <a href="https://twitter.com/hnginternship" title="Follow on Twitter!"><img
+                            src="https://res.cloudinary.com/jaycodist/image/upload/v1570722900/twitter-logo_m1mgzi.svg"></a>
+                    <a href="https://www.facebook.com/HNG-Internship-115577009820117/"><img title="Follow on Facebook!"
+                            src="https://res.cloudinary.com/jaycodist/image/upload/v1570722900/facebook-logo_bw1hal.svg"></a>
+                    <a href="https://dribble.com"><img title="Follow on Dribble!"
+                            src="https://res.cloudinary.com/jaycodist/image/upload/v1570722900/dribble-logo_w4vwuz.svg"></a>
+                </div>
+                
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<form action="" method="post">
+    <div class="form-group">
+        <input type='email' class="form-control" required placeholder="enter your email" id="subscribe-form">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" role="button" id="subscribe" style="background-color:#00AEFF; border: none">
+            <i class="fa fa-envelope"></i> Follow Our Newsletter
+        </button>
+    </div>
+</form>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#subscribe").on("click",function (e) {
+            e.preventDefault();
+           let email = $("#subscribe-form").val();
+           if(email == ""){
+               swal('Error!',"Kindly enter your email",{icon: 'error',  timer: 2500});
+               return; //Prevent submission if field is empty
+           }
+
+
+           $.ajax({
+              url: 'subscribe_ajax.php',
+              dataType: 'json',
+               type: 'post',
+              timeout: 45000,
+              data: {
+                  'add': '1',
+                  'email': email
+              },
+               success: function (f) {
+                   let status = f.status;
+
+                   if(status == true){
+
+                       swal('Great',f.message,{icon: 'success',  timer: 25000});
+                       $("#subscribe-form").val(''); //Clear text field after confirmed subscription
+                   }else{
+                       swal('Error!',f.message,{icon: 'error',  timer: 25000});
+                   }
+               },
+               error: function (e) {
+                   swal('Error!',"Network error, please try again",{icon: 'error',  timer: 2500});
+               }
+           });
+        });
+    });
+</script>            </div>
+        </div>
+    </nav>
+    <p class="copyright">&copy; 2019, HNG Internship. All rights reserved.</p>
+    </div>
+    
+</footer>
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
+@media screen and (min-width: 0) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* HEADER STYLE STARTS */
+    body {
+        font-family: "Open Sans", segoe UI, sans-serif;
+        scroll-behavior: smooth;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    #header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        position: relative;
+    }
+    #header #logo {
+        width: 250px;
+    }
+    #header #logo img {
+        width: 100%;
+    }
+    .nav_button {
+        position: absolute;
+        right: 5px;
+        top: 30px;
+    }
+    .nav_button:hover, .nav-link:hover {
+        opacity: .6;
+    }
+    .nav_button .nav_button_bar {
+        background-color: black;
+        width: 25px;
+        height: 3px;
+        margin-bottom: 4px;
+    }
+    .menu_bar {
+        display: none;
+        text-align: right;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    .nav-link {
+        color: #474747;
+        font-size: 16px;
+        line-height: 22px;
+        width: 100%;
+        font-weight: lighter;
+        text-align: right;
+    }
+    .primary-btn {
+        background: #00AEFF;
+        border-radius: 4px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        color: #FFFFFF;
+        width: 150px;
+        margin-right: 16px;
+    }
+
+    .float_right {
+        float: right;
+    }
+
+    .primary-btn:hover {
+        opacity: .5;
+        color: white;
+    }
+
+    /*FOOTER STYLING */
+        #footer {
+            background-color: #FAFAFA;
+            padding: 50px 100px;
+        }
+        #footer #footer-logo {
+            width: 280px;
+        }
+
+        .footer-nav {
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+        }
+
+
+
+        .footer-nav h2 {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 34px;
+            color: #00AEFF;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav #link-list a {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 27px;
+            color: #00AEFF;
+            display: block;
+        }
+
+        #footer .footer-section a {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 28px;
+            color: #737373;
+        }
+
+        #footer  #socials img {
+            width: 20px;
+            margin-right: 10px;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+    }
+
+    @media screen and (min-width:940px){
+        .container-fluid{
+            padding: 0 40px;
+        }
+        #header {
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+        }
+        .nav_button {
+            display: none;
+        }
+
+        .menu_bar {
+            display: block;
+            width: auto;
+            float: none;
+            text-align: right;
+        }
+
+        .menu_bar .nav-link {
+            display: inline;
+            min-width: 150px;
+        }
+
+        .menu_bar .float_right{
+            float: none;
+        }
+
+    }
+
+    @media screen and (max-width: 500px){
+        #footer {
+            padding: 50px 20px;
+        }
+    }
+
+
+</style>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+</html>
